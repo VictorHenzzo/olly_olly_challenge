@@ -6,18 +6,15 @@ import 'package:equatable/equatable.dart';
 /// across the app. It optionally wraps another error object (e.g. a message,
 /// another exception, or detailed error data).
 class AppException extends Equatable implements Exception {
-  /// Creates an [AppException] with an optional [error] object.
-  ///
-  /// The [error] can be a string message, another exception, or any
-  /// useful diagnostic data.
-  const AppException([this.error]);
+  /// Creates an [AppException] with an optional [message] object.
+  const AppException([this.message]);
 
-  /// The underlying error or message associated with this exception.
-  final Object? error;
+  /// A human-readable description of the message.
+  final String? message;
 
   @override
-  String toString() => 'AppException: $error';
+  String toString() => 'AppException: $message';
 
   @override
-  List<Object?> get props => [error];
+  List<Object?> get props => [message];
 }
