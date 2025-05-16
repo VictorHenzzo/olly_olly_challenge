@@ -3,6 +3,7 @@ import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptio
 import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_up_exceptions.dart';
 import 'package:olly_olly_challenge/core/domain/repositories/auth_repository.dart';
 import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
 
 class MockAuthRepository extends Mock implements AuthRepository {
   void stubSignUpWithEmailAndPassword(
@@ -25,5 +26,9 @@ class MockAuthRepository extends Mock implements AuthRepository {
         password: any(named: 'password'),
       ),
     ).thenAnswer((final _) async => result);
+  }
+
+  void stubSignOut(final Either<AppException, void> result) {
+    when(signOut).thenAnswer((final _) async => result);
   }
 }
