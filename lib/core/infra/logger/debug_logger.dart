@@ -1,13 +1,11 @@
 import 'package:injectable/injectable.dart';
-import 'package:logger/logger.dart' as logger;
+import 'package:logger/logger.dart' as l;
 import 'package:olly_olly_challenge/core/infra/logger/logger.dart';
 
 @Injectable(as: Logger)
 class DebugLogger extends Logger {
-  DebugLogger({
-    required final logger.Logger logger,
-  }) : _logger = logger;
-  final logger.Logger _logger;
+  DebugLogger() : _logger = l.Logger();
+  final l.Logger _logger;
 
   @override
   void info(
