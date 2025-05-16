@@ -13,6 +13,7 @@ dependencies:
   firebase_auth: 5.5.3
   flutter:
     sdk: flutter
+  geolocator: 14.0.0
   http: 1.4.0
   logger: 2.5.0
 
