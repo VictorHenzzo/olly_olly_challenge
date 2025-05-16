@@ -9,6 +9,8 @@ sealed class SignInException extends AppException {
         return InvalidCredentialSignInException(code);
       case 'user-not-found':
         return UserNotFoundSignInException(code);
+      case 'invalid-email':
+        return InvalidEmailSignInException(code);
       case 'wrong-password':
         return WrongPasswordSignInException(code);
 
@@ -20,6 +22,10 @@ sealed class SignInException extends AppException {
 
 class InvalidCredentialSignInException extends SignInException {
   const InvalidCredentialSignInException([super.message]);
+}
+
+class InvalidEmailSignInException extends SignInException {
+  const InvalidEmailSignInException([super.message]);
 }
 
 class UserNotFoundSignInException extends SignInException {
