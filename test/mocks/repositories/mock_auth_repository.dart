@@ -1,4 +1,5 @@
 import 'package:mocktail/mocktail.dart';
+import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
 import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptions.dart';
 import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_up_exceptions.dart';
 import 'package:olly_olly_challenge/core/domain/repositories/auth_repository.dart';
@@ -30,5 +31,9 @@ class MockAuthRepository extends Mock implements AuthRepository {
 
   void stubSignOut(final Either<AppException, void> result) {
     when(signOut).thenAnswer((final _) async => result);
+  }
+
+  void stubFetchAuthState(final Stream<AuthStatus> stream) {
+    when(fetchAuthState).thenAnswer((final _) => stream);
   }
 }
