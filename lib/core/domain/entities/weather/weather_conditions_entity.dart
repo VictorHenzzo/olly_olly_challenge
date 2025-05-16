@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 /// Represents the current weather conditions including temperature, feels like,
-/// minimum and maximum temperatures, pressure, humidity, and various weather statuses.
+/// minimum and maximum temperatures, pressure, humidity, and various
+/// weather statuses.
 class WeatherConditionsEntity extends Equatable {
   const WeatherConditionsEntity({
     required this.temp,
