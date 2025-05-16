@@ -40,7 +40,7 @@ class AuthObserverBloc extends Bloc<AuthObserverEvent, AuthObserverState> {
     return switch (authStatus) {
       AuthStatus.authenticated =>
         appNavigator.pushNamedAndRemoveAll(AppDirections.homeScreen),
-      _ => appNavigator.pushNamedAndRemoveAll(AppDirections.loginScreen),
+      _ => appNavigator.pushNamedAndRemoveAll(AppDirections.authScreen),
     };
   }
 

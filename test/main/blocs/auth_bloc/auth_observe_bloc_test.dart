@@ -48,7 +48,7 @@ void main() {
                   AppDirections.homeScreen,
                 ),
             () => navigator.pushNamedAndRemoveAll<void>(
-                  AppDirections.loginScreen,
+                  AppDirections.authScreen,
                 ),
             () => navigator.pushNamedAndRemoveAll<void>(
                   AppDirections.homeScreen,

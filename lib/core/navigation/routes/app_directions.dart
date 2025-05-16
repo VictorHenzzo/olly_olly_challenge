@@ -2,6 +2,6 @@ abstract class AppDirections {
   const AppDirections();
 
   static const startScreen = '/';
-  static const loginScreen = '/login';
+  static const authScreen = '/auth';
   static const homeScreen = '/home';
 }
