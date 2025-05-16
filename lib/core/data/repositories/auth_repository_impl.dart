@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:injectable/injectable.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source_exception.dart';
 import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
@@ -9,6 +10,7 @@ import 'package:olly_olly_challenge/core/domain/repositories/auth_repository.dar
 import 'package:olly_olly_challenge/core/infra/either/either.dart';
 import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
 
+@Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this._dataSource);
 
