@@ -19,8 +19,8 @@ class PositionModel extends PositionEntity {
 
   factory PositionModel.fromJson(final Map<String, dynamic> json) =>
       PositionModel(
-        latitude: json['latitude'] as double,
-        longitude: json['longitude'] as double,
+        latitude: json['lat'] as double,
+        longitude: json['lon'] as double,
       );
 
   Map<String, dynamic> toJson() => {
