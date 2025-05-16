@@ -15,8 +15,8 @@ abstract class HttpDataSource {
   /// Returns a [Future] that completes with a [HttpResponse].
   /// Throws [HttpException] if the request fails.
   Future<HttpResponse> get(
-    Uri uri, {
-    Map<String, String> headers,
+    final Uri uri, {
+    final Map<String, String> headers,
   });
 
   /// Makes a DELETE request to the specified [uri].
@@ -27,8 +27,8 @@ abstract class HttpDataSource {
   /// Returns a [Future] that completes with a [HttpResponse].
   /// Throws [HttpException] if the request fails.
   Future<HttpResponse> delete(
-    Uri uri, {
-    Map<String, String> headers,
+    final Uri uri, {
+    final Map<String, String> headers,
   });
 
   /// Makes a PATCH request to the specified [uri].
@@ -40,9 +40,9 @@ abstract class HttpDataSource {
   /// Returns a [Future] that completes with a [HttpResponse].
   /// Throws [HttpException] if the request fails.
   Future<HttpResponse> patch(
-    Uri uri, {
-    Map<String, dynamic> body,
-    Map<String, String> headers,
+    final Uri uri, {
+    final Map<String, dynamic> body,
+    final Map<String, String> headers,
   });
 
   /// Makes a POST request to the specified [uri].
@@ -54,9 +54,9 @@ abstract class HttpDataSource {
   /// Returns a [Future] that completes with a [HttpResponse].
   /// Throws [HttpException] if the request fails.
   Future<HttpResponse> post(
-    Uri uri, {
-    Map<String, dynamic> body,
-    Map<String, String> headers,
+    final Uri uri, {
+    final Map<String, dynamic> body,
+    final Map<String, String> headers,
   });
 
   /// Makes a PUT request to the specified [uri].
@@ -68,8 +68,8 @@ abstract class HttpDataSource {
   /// Returns a [Future] that completes with a [HttpResponse].
   /// Throws [HttpException] if the request fails.
   Future<HttpResponse> put(
-    Uri uri, {
-    Map<String, dynamic> body,
-    Map<String, String> headers,
+    final Uri uri, {
+    final Map<String, dynamic> body,
+    final Map<String, String> headers,
   });
 }

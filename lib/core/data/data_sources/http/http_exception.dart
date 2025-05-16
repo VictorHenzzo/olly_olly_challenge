@@ -1,8 +1,8 @@
 import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
 
 /// Represents HTTP-specific exceptions that can occur during network requests.
-/// Each exception corresponds to a specific HTTP status code and optionally carries
-/// an Exception message.
+/// Each exception corresponds to a specific HTTP status code and optionally
+/// carries an Exception message.
 sealed class HttpException extends AppException {
   const HttpException(super.message, this.code);
 
@@ -10,10 +10,11 @@ sealed class HttpException extends AppException {
   ///
   /// Parameters:
   ///   - [code]: The HTTP status code that triggered the exception
-  ///   - [message]: Optional exception message providing more details about the Exception
+  ///   - [message]: Optional exception message
   ///
-  /// Returns an appropriate exception type based on the status code. If no specific
-  /// exception type is found for the given code, returns a [ServerException].
+  /// Returns an appropriate exception type based on the status code.
+  /// If no specific exception type is found for the given code, returns a
+  /// [ServerException].
   factory HttpException.fromStatusCode(
     final int code, [
     final String message = '',
@@ -75,8 +76,6 @@ sealed class HttpException extends AppException {
     511: NetworkAuthenticationRequiredException.new,
   };
 }
-
-// Client Exception responses -----------------------------------------------------
 
 final class BadRequestException extends HttpException {
   const BadRequestException({final String message = ''}) : super(message, 400);
@@ -209,8 +208,6 @@ final class UnavailableForLegalReasonsException extends HttpException {
   const UnavailableForLegalReasonsException({final String message = ''})
       : super(message, 451);
 }
-
-// Server Exception responses -----------------------------------------------------
 
 final class ServerException extends HttpException {
   const ServerException({final String message = ''}) : super(message, 500);

@@ -81,7 +81,7 @@ void main() {
         () => dataSource.get(uri),
         throwsA(
           isA<BadRequestException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Bad Request"}',
           ),
@@ -98,7 +98,7 @@ void main() {
         () => dataSource.get(uri),
         throwsA(
           isA<ServerException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Server Error"}',
           ),
@@ -163,7 +163,7 @@ void main() {
         () => dataSource.post(uri, body: body),
         throwsA(
           isA<BadRequestException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Bad Request"}',
           ),
@@ -180,7 +180,7 @@ void main() {
         () => dataSource.post(uri, body: body),
         throwsA(
           isA<ServerException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Server Error"}',
           ),
@@ -245,7 +245,7 @@ void main() {
         () => dataSource.put(uri, body: body),
         throwsA(
           isA<BadRequestException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Bad Request"}',
           ),
@@ -262,7 +262,7 @@ void main() {
         () => dataSource.put(uri, body: body),
         throwsA(
           isA<ServerException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Server Error"}',
           ),
@@ -327,7 +327,7 @@ void main() {
         () => dataSource.patch(uri, body: body),
         throwsA(
           isA<BadRequestException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Bad Request"}',
           ),
@@ -344,7 +344,7 @@ void main() {
         () => dataSource.patch(uri, body: body),
         throwsA(
           isA<ServerException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Server Error"}',
           ),
@@ -408,7 +408,7 @@ void main() {
         () => dataSource.delete(uri),
         throwsA(
           isA<BadRequestException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Bad Request"}',
           ),
@@ -425,7 +425,7 @@ void main() {
         () => dataSource.delete(uri),
         throwsA(
           isA<ServerException>().having(
-            (e) => e.message,
+            (final e) => e.message,
             'message',
             '{"error": "Server Error"}',
           ),
@@ -436,16 +436,16 @@ void main() {
 }
 
 class _MockClient extends Mock implements http.Client {
-  void stubGet(http.Response response) {
+  void stubGet(final http.Response response) {
     when(
       () => get(
         any(),
         headers: any(named: 'headers'),
       ),
-    ).thenAnswer((_) async => response);
+    ).thenAnswer((final _) async => response);
   }
 
-  void stubGetException(Object throwable) {
+  void stubGetException(final Object throwable) {
     when(
       () => get(
         any(),
@@ -454,17 +454,17 @@ class _MockClient extends Mock implements http.Client {
     ).thenThrow(throwable);
   }
 
-  void stubPost(http.Response response) {
+  void stubPost(final http.Response response) {
     when(
       () => post(
         any(),
         headers: any(named: 'headers'),
         body: any(named: 'body'),
       ),
-    ).thenAnswer((_) async => response);
+    ).thenAnswer((final _) async => response);
   }
 
-  void stubPostException(Object throwable) {
+  void stubPostException(final Object throwable) {
     when(
       () => post(
         any(),
@@ -474,17 +474,17 @@ class _MockClient extends Mock implements http.Client {
     ).thenThrow(throwable);
   }
 
-  void stubPut(http.Response response) {
+  void stubPut(final http.Response response) {
     when(
       () => put(
         any(),
         headers: any(named: 'headers'),
         body: any(named: 'body'),
       ),
-    ).thenAnswer((_) async => response);
+    ).thenAnswer((final _) async => response);
   }
 
-  void stubPutException(Object throwable) {
+  void stubPutException(final Object throwable) {
     when(
       () => put(
         any(),
@@ -494,17 +494,17 @@ class _MockClient extends Mock implements http.Client {
     ).thenThrow(throwable);
   }
 
-  void stubPatch(http.Response response) {
+  void stubPatch(final http.Response response) {
     when(
       () => patch(
         any(),
         headers: any(named: 'headers'),
         body: any(named: 'body'),
       ),
-    ).thenAnswer((_) async => response);
+    ).thenAnswer((final _) async => response);
   }
 
-  void stubPatchException(Object throwable) {
+  void stubPatchException(final Object throwable) {
     when(
       () => patch(
         any(),
@@ -514,16 +514,16 @@ class _MockClient extends Mock implements http.Client {
     ).thenThrow(throwable);
   }
 
-  void stubDelete(http.Response response) {
+  void stubDelete(final http.Response response) {
     when(
       () => delete(
         any(),
         headers: any(named: 'headers'),
       ),
-    ).thenAnswer((_) async => response);
+    ).thenAnswer((final _) async => response);
   }
 
-  void stubDeleteException(Object throwable) {
+  void stubDeleteException(final Object throwable) {
     when(
       () => delete(
         any(),

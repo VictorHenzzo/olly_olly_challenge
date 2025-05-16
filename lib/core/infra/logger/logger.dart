@@ -12,7 +12,11 @@ abstract class Logger {
   /// - [message]: The content to be logged.
   /// - [error]: (Optional) A related error or object for context.
   /// - [stackTrace]: (Optional) Stack trace associated with the event.
-  void info(String message, {Object? error, StackTrace? stackTrace});
+  void info(
+    final String message, {
+    final Object? error,
+    final StackTrace? stackTrace,
+  });
 
   /// Records a warning.
   ///
@@ -22,7 +26,11 @@ abstract class Logger {
   /// - [message]: Description of the warning.
   /// - [error]: (Optional) A related error or object for context.
   /// - [stackTrace]: (Optional) Stack trace to help identify the source.
-  void warning(String message, {Object? error, StackTrace? stackTrace});
+  void warning(
+    final String message, {
+    final Object? error,
+    final StackTrace? stackTrace,
+  });
 
   /// Records an error.
   ///
@@ -32,5 +40,9 @@ abstract class Logger {
   /// - [message]: Description of the error event.
   /// - [error]: (Optional) The actual exception or error object.
   /// - [stackTrace]: (Optional) Stack trace at the point of failure.
-  void error(String message, {Object? error, StackTrace? stackTrace});
+  void error(
+    final String message, {
+    final Object? error,
+    final StackTrace? stackTrace,
+  });
 }

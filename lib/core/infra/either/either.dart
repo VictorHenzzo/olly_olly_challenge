@@ -24,20 +24,21 @@ abstract class Either<E, V> extends Equatable {
 
   /// Executes either [onLeft] or [onRight] depending on the actual type.
   void fold({
-    required void Function(E left) onLeft,
-    required void Function(V right) onRight,
+    required final void Function(E left) onLeft,
+    required final void Function(V right) onRight,
   });
 
   /// Same as [fold], but supports asynchronous handlers.
   Future<void> foldAsync({
-    required Future<void> Function(E left) onLeft,
-    required Future<void> Function(V right) onRight,
+    required final Future<void> Function(E left) onLeft,
+    required final Future<void> Function(V right) onRight,
   });
 
-  /// Maps the contained value to a new value using either [onLeft] or [onRight].
+  /// Maps the contained value to a new value using either [onLeft]
+  /// or [onRight].
   T map<T>({
-    required T Function(E left) onLeft,
-    required T Function(V right) onRight,
+    required final T Function(E left) onLeft,
+    required final T Function(V right) onRight,
   });
 }
 
@@ -63,23 +64,23 @@ class Right<E, V> extends Either<E, V> {
 
   @override
   void fold({
-    required void Function(E left) onLeft,
-    required void Function(V right) onRight,
+    required final void Function(E left) onLeft,
+    required final void Function(V right) onRight,
   }) =>
       onRight(value);
 
   @override
   Future<void> foldAsync({
-    required Future<void> Function(E left) onLeft,
-    required Future<void> Function(V right) onRight,
+    required final Future<void> Function(E left) onLeft,
+    required final Future<void> Function(V right) onRight,
   }) async {
     await onRight(value);
   }
 
   @override
   T map<T>({
-    required T Function(E left) onLeft,
-    required T Function(V right) onRight,
+    required final T Function(E left) onLeft,
+    required final T Function(V right) onRight,
   }) =>
       onRight(value);
 
@@ -109,23 +110,23 @@ class Left<E, V> extends Either<E, V> {
 
   @override
   void fold({
-    required void Function(E left) onLeft,
-    required void Function(V right) onRight,
+    required final void Function(E left) onLeft,
+    required final void Function(V right) onRight,
   }) =>
       onLeft(value);
 
   @override
   Future<void> foldAsync({
-    required Future<void> Function(E left) onLeft,
-    required Future<void> Function(V right) onRight,
+    required final Future<void> Function(E left) onLeft,
+    required final Future<void> Function(V right) onRight,
   }) async {
     await onLeft(value);
   }
 
   @override
   T map<T>({
-    required T Function(E left) onLeft,
-    required T Function(V right) onRight,
+    required final T Function(E left) onLeft,
+    required final T Function(V right) onRight,
   }) =>
       onLeft(value);
 

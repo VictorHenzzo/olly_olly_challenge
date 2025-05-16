@@ -1,8 +1,9 @@
 import 'dart:convert';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
+
 import 'package:http/http.dart' as http;
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
+import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/http/http_exception.dart';
+import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
 
 class HttpDataSourceImpl implements HttpDataSource {
   HttpDataSourceImpl({
@@ -13,8 +14,8 @@ class HttpDataSourceImpl implements HttpDataSource {
 
   @override
   Future<HttpResponse> get(
-    Uri uri, {
-    Map<String, String> headers = const {},
+    final Uri uri, {
+    final Map<String, String> headers = const {},
   }) async {
     final response = await client.get(
       uri,
@@ -26,8 +27,8 @@ class HttpDataSourceImpl implements HttpDataSource {
 
   @override
   Future<HttpResponse> delete(
-    Uri uri, {
-    Map<String, String> headers = const {},
+    final Uri uri, {
+    final Map<String, String> headers = const {},
   }) async {
     final response = await client.delete(
       uri,
@@ -39,9 +40,9 @@ class HttpDataSourceImpl implements HttpDataSource {
 
   @override
   Future<HttpResponse> patch(
-    Uri uri, {
-    Map<String, dynamic> body = const {},
-    Map<String, String> headers = const {},
+    final Uri uri, {
+    final Map<String, dynamic> body = const {},
+    final Map<String, String> headers = const {},
   }) async {
     final response = await client.patch(
       uri,
@@ -54,9 +55,9 @@ class HttpDataSourceImpl implements HttpDataSource {
 
   @override
   Future<HttpResponse> post(
-    Uri uri, {
-    Map<String, dynamic> body = const {},
-    Map<String, String> headers = const {},
+    final Uri uri, {
+    final Map<String, dynamic> body = const {},
+    final Map<String, String> headers = const {},
   }) async {
     final response = await client.post(
       uri,
@@ -69,9 +70,9 @@ class HttpDataSourceImpl implements HttpDataSource {
 
   @override
   Future<HttpResponse> put(
-    Uri uri, {
-    Map<String, dynamic> body = const {},
-    Map<String, String> headers = const {},
+    final Uri uri, {
+    final Map<String, dynamic> body = const {},
+    final Map<String, String> headers = const {},
   }) async {
     final response = await client.put(
       uri,
@@ -82,18 +83,18 @@ class HttpDataSourceImpl implements HttpDataSource {
     return _transformResponse(response);
   }
 
-  Map<String, String> _decorateHeaders(Map<String, String> headers) {
+  Map<String, String> _decorateHeaders(final Map<String, String> headers) {
     return {
       ...headers,
       'Content-Type': 'application/json',
     };
   }
 
-  String _encodeBody(Map<String, dynamic> body) {
+  String _encodeBody(final Map<String, dynamic> body) {
     return jsonEncode(body);
   }
 
-  HttpResponse _transformResponse(http.Response response) {
+  HttpResponse _transformResponse(final http.Response response) {
     if (response.statusCode >= 400) {
       throw HttpException.fromStatusCode(
         response.statusCode,
