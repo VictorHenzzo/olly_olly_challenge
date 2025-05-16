@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart' as fa;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source_exception.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/firebase_data_source_impl.dart';
+import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
 
 void main() {
   late FirebaseDataSourceImpl sut;
@@ -194,6 +197,92 @@ void main() {
       );
     });
   });
+
+  group('fetchAuthState', () {
+    test('should return unauthenticated when user is null', () async {
+      // arrange
+      firebaseAuth.stubAuthStateChanges(Stream.value(null));
+
+      // act
+      final result = sut.fetchAuthState();
+
+      // assert
+      await expectLater(
+        result,
+        emits(AuthStatus.unauthenticated),
+      );
+    });
+
+    test('should return authenticated when user is not null', () async {
+      // arrange
+      firebaseAuth.stubAuthStateChanges(Stream.value(user));
+
+      // act
+      final result = sut.fetchAuthState();
+
+      // assert
+      await expectLater(
+        result,
+        emits(AuthStatus.authenticated),
+      );
+    });
+
+    test('should return unauthenticated when error occurs', () async {
+      // arrange
+      firebaseAuth.stubAuthStateChanges(Stream.error(Exception('Test error')));
+
+      // act
+      final result = sut.fetchAuthState();
+
+      // assert
+      await expectLater(
+        result,
+        emits(AuthStatus.unauthenticated),
+      );
+    });
+
+    test('should continue emitting after error occurs', () async {
+      // arrange
+      final controller = StreamController<fa.User?>();
+      firebaseAuth.stubAuthStateChanges(controller.stream);
+      final emittedValues = <AuthStatus>[];
+
+      Future<void> addValue(final fa.User? value) async {
+        controller.add(value);
+        await Future<void>.delayed(Duration.zero);
+      }
+
+      Future<void> addError() async {
+        await Future<void>.delayed(Duration.zero);
+        controller.addError(Exception('Test error'));
+      }
+
+      // act
+      final result = sut.fetchAuthState();
+
+      // capture the emitted values
+      final sub = result.listen(emittedValues.add);
+
+      // emit values
+      await addValue(user);
+      await addError();
+      await addValue(null);
+      await addValue(user);
+
+      await controller.close();
+      await sub.cancel();
+
+      // assert
+      expect(
+        emittedValues,
+        [
+          AuthStatus.authenticated,
+          AuthStatus.unauthenticated,
+          AuthStatus.authenticated,
+        ],
+      );
+    });
+  });
 }
 
 class _MockFirebaseAuth extends Mock implements fa.FirebaseAuth {
@@ -247,6 +336,10 @@ class _MockFirebaseAuth extends Mock implements fa.FirebaseAuth {
         password: any(named: 'password'),
       ),
     ).thenThrow(throwable);
+  }
+
+  void stubAuthStateChanges(final Stream<fa.User?> stream) {
+    when(authStateChanges).thenAnswer((final _) => stream);
   }
 }
 

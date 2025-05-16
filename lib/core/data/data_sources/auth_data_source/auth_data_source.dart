@@ -1,3 +1,5 @@
+import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
+
 abstract class AuthDataSource {
   Future<void> signInWithEmailAndPassword(
     final String email,
@@ -9,4 +11,5 @@ abstract class AuthDataSource {
     final String password,
   );
   Future<String?> getToken();
+  Stream<AuthStatus> fetchAuthState();
 }
