@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart' as fa;
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source_exception.dart';
@@ -75,15 +77,20 @@ class FirebaseDataSourceImpl implements AuthDataSource {
 
   @override
   Stream<AuthStatus> fetchAuthState() {
-    return firebaseAuth.authStateChanges().map((final user) {
-      return switch (user == null) {
-        true => AuthStatus.unauthenticated,
-        false => AuthStatus.authenticated,
-      };
-    }).handleError(
-      (final error) {
-        return AuthStatus.unauthenticated;
-      },
-    );
+    return firebaseAuth.authStateChanges().transform(
+          StreamTransformer.fromHandlers(
+            handleData: (final user, final sink) {
+              final status = switch (user == null) {
+                true => AuthStatus.unauthenticated,
+                false => AuthStatus.authenticated,
+              };
+
+              sink.add(status);
+            },
+            handleError: (final _, final __, final sink) {
+              sink.add(AuthStatus.unauthenticated);
+            },
+          ),
+        );
   }
 }

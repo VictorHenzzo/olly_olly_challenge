@@ -278,6 +278,7 @@ void main() {
         [
           AuthStatus.authenticated,
           AuthStatus.unauthenticated,
+          AuthStatus.unauthenticated,
           AuthStatus.authenticated,
         ],
       );
