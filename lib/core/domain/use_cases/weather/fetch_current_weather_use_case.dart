@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
 import 'package:olly_olly_challenge/core/domain/entities/weather/current_weather_entity.dart';
 import 'package:olly_olly_challenge/core/domain/repositories/weather_repository.dart';
@@ -10,6 +11,7 @@ abstract class FetchCurrentWeatherUseCase {
   );
 }
 
+@Injectable(as: FetchCurrentWeatherUseCase)
 class FetchCurrentWeatherUseCaseImpl implements FetchCurrentWeatherUseCase {
   FetchCurrentWeatherUseCaseImpl(this.weatherRepository);
 

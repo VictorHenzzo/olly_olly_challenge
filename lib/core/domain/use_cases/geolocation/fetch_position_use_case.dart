@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
 import 'package:olly_olly_challenge/core/domain/enums/location_access_permission.dart';
 import 'package:olly_olly_challenge/core/domain/exceptions/geolocation/fetch_position_exception.dart';
@@ -8,6 +9,7 @@ abstract class FetchPositionUseCase {
   Future<Either<FetchPositionException, PositionEntity>> call();
 }
 
+@Injectable(as: FetchPositionUseCase)
 class FetchPositionUseCaseImpl implements FetchPositionUseCase {
   FetchPositionUseCaseImpl(this._repository);
 
