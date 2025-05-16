@@ -13,7 +13,7 @@ abstract class PositionFixture {
       );
 
   static Map<String, dynamic> json() => {
-        'latitude': 1,
-        'longitude': 2,
+        'lat': 1,
+        'lon': 2,
       };
 }
