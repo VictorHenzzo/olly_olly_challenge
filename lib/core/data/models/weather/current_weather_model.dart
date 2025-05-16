@@ -24,9 +24,9 @@ class CurrentWeatherModel extends CurrentWeatherEntity {
     final cloudsJson = json['clouds'] as Map<String, dynamic>;
 
     return CurrentWeatherModel(
-      conditions: WeatherConditionsModel.fromJson(mainJson),
-      wind: WindStatusModel.fromJson(windJson),
-      clouds: CloudStatusModel.fromJson(cloudsJson),
+      conditions: WeatherConditionsModel.fromJson(mainJson).toEntity(),
+      wind: WindStatusModel.fromJson(windJson).toEntity(),
+      clouds: CloudStatusModel.fromJson(cloudsJson).toEntity(),
       weather: _parseWeathers(weatherJson),
       visibility: (json['visibility'] as num).toDouble(),
     );
@@ -36,7 +36,7 @@ class CurrentWeatherModel extends CurrentWeatherEntity {
     final List<dynamic> weatherJson,
   ) {
     WeatherStatusEntity build(final dynamic weather) =>
-        WeatherStatusModel.fromJson(weather as Map<String, dynamic>);
+        WeatherStatusModel.fromJson(weather as Map<String, dynamic>).toEntity();
 
     return weatherJson.map(build).toList(growable: false);
   }
