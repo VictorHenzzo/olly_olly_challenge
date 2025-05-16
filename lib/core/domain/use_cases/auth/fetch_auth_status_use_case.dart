@@ -1,9 +1,11 @@
 import 'package:injectable/injectable.dart';
 import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
 import 'package:olly_olly_challenge/core/domain/repositories/auth_repository.dart';
+import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
 
 abstract class FetchAuthStatusUseCase {
-  Stream<AuthStatus> call();
+  Future<Either<AppException, AuthStatus>> call();
 }
 
 @Injectable(as: FetchAuthStatusUseCase)
@@ -13,5 +15,6 @@ class FetchAuthStatusUseCaseImpl implements FetchAuthStatusUseCase {
   final AuthRepository _repository;
 
   @override
-  Stream<AuthStatus> call() => _repository.fetchAuthState();
+  Future<Either<AppException, AuthStatus>> call() =>
+      _repository.fetchAuthState();
 }

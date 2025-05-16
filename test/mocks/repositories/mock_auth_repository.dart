@@ -33,7 +33,7 @@ class MockAuthRepository extends Mock implements AuthRepository {
     when(signOut).thenAnswer((final _) async => result);
   }
 
-  void stubFetchAuthState(final Stream<AuthStatus> stream) {
-    when(fetchAuthState).thenAnswer((final _) => stream);
+  void stubFetchAuthState(final Either<AppException, AuthStatus> result) {
+    when(fetchAuthState).thenAnswer((final _) async => result);
   }
 }

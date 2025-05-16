@@ -53,13 +53,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Stream<AuthStatus> fetchAuthState() {
-    return _dataSource.fetchAuthState().transform(
-      StreamTransformer.fromHandlers(
-        handleError: (final _, final __, final sink) {
-          sink.add(AuthStatus.unauthenticated);
-        },
-      ),
-    );
+  Future<Either<AppException, AuthStatus>> fetchAuthState() async {
+    try {
+      final status = await _dataSource.fetchAuthState();
+      return Right(status);
+    } on AuthDataSourceException catch (e) {
+      return Left(AppException(e.message));
+    }
   }
 }

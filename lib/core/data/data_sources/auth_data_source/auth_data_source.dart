@@ -11,5 +11,5 @@ abstract class AuthDataSource {
     final String password,
   );
   Future<String?> getToken();
-  Stream<AuthStatus> fetchAuthState();
+  Future<AuthStatus> fetchAuthState();
 }

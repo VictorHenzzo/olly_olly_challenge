@@ -36,7 +36,15 @@ class MockAuthDataSource extends Mock implements AuthDataSource {
     when(signOut).thenThrow(AuthDataSourceException(code));
   }
 
-  void stubFetchAuthState(final Stream<AuthStatus> stream) {
-    when(fetchAuthState).thenAnswer((final _) => stream);
+  void stubFetchAuthState(final AuthStatus status) {
+    when(fetchAuthState).thenAnswer(
+      (final _) async => status,
+    );
+  }
+
+  void stubFetchAuthStateException(final String code) {
+    when(fetchAuthState).thenThrow(
+      AuthDataSourceException(code),
+    );
   }
 }

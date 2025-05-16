@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:olly_olly_challenge/core/data/repositories/auth_repository_impl.dart';
@@ -267,78 +265,40 @@ void main() {
   group('fetchAuthState', () {
     test('should return authenticated when user is signed in', () async {
       // arrange
-      dataSource.stubFetchAuthState(Stream.value(AuthStatus.authenticated));
+      dataSource.stubFetchAuthState(AuthStatus.authenticated);
 
       // act
-      final result = sut.fetchAuthState();
+      final result = await sut.fetchAuthState();
 
       // assert
-      await expectLater(result, emits(AuthStatus.authenticated));
+      expect(result.isRight, isTrue);
+      expect(result.rightOrNull, equals(AuthStatus.authenticated));
       verify(() => dataSource.fetchAuthState()).called(1);
     });
 
     test('should return unauthenticated when user is not signed in', () async {
       // arrange
-      dataSource.stubFetchAuthState(Stream.value(AuthStatus.unauthenticated));
+      dataSource.stubFetchAuthState(AuthStatus.unauthenticated);
 
       // act
-      final result = sut.fetchAuthState();
+      final result = await sut.fetchAuthState();
 
       // assert
-      await expectLater(result, emits(AuthStatus.unauthenticated));
+      expect(result.isRight, isTrue);
+      expect(result.rightOrNull, equals(AuthStatus.unauthenticated));
       verify(() => dataSource.fetchAuthState()).called(1);
     });
 
-    test('should return unauthenticated when error occurs', () async {
+    test('should return AppException when error occurs', () async {
       // arrange
-      final controller = StreamController<AuthStatus>();
-      dataSource.stubFetchAuthState(controller.stream);
-      final emitted = <AuthStatus>[];
+      dataSource.stubFetchAuthStateException('error');
 
       // act
-      final sub = sut.fetchAuthState().listen(emitted.add);
-
-      // emit error
-      controller.addError(Exception('Test error'));
-      await Future<void>.delayed(const Duration(seconds: 1));
-
-      await controller.close();
-      await sub.cancel();
+      final result = await sut.fetchAuthState();
 
       // assert
-      expect(emitted, [AuthStatus.unauthenticated]);
-      verify(() => dataSource.fetchAuthState()).called(1);
-    });
-
-    test('should continue emitting after error occurs', () async {
-      // arrange
-      final controller = StreamController<AuthStatus>();
-      dataSource.stubFetchAuthState(controller.stream);
-      final emitted = <AuthStatus>[];
-
-      // act
-      final sub = sut.fetchAuthState().listen(emitted.add);
-
-      // emit values
-      controller.add(AuthStatus.authenticated);
-      await Future<void>.delayed(Duration.zero);
-      controller.addError(Exception('Test error'));
-      await Future<void>.delayed(Duration.zero);
-      controller.add(AuthStatus.authenticated);
-      await Future<void>.delayed(Duration.zero);
-
-      await controller.close();
-      await sub.cancel();
-
-      // assert
-      expect(
-        emitted,
-        [
-          AuthStatus.authenticated,
-          AuthStatus.unauthenticated,
-          AuthStatus.authenticated,
-        ],
-      );
+      expect(result.isLeft, isTrue);
+      expect(result.leftOrNull, isA<AppException>());
       verify(() => dataSource.fetchAuthState()).called(1);
     });
   });

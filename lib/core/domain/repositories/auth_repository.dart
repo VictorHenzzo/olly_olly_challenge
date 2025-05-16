@@ -17,5 +17,5 @@ abstract class AuthRepository {
 
   Future<Either<AppException, void>> signOut();
 
-  Stream<AuthStatus> fetchAuthState();
+  Future<Either<AppException, AuthStatus>> fetchAuthState();
 }

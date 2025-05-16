@@ -76,21 +76,19 @@ class FirebaseDataSourceImpl implements AuthDataSource {
   }
 
   @override
-  Stream<AuthStatus> fetchAuthState() {
-    return firebaseAuth.authStateChanges().transform(
-          StreamTransformer.fromHandlers(
-            handleData: (final user, final sink) {
-              final status = switch (user == null) {
-                true => AuthStatus.unauthenticated,
-                false => AuthStatus.authenticated,
-              };
-
-              sink.add(status);
-            },
-            handleError: (final _, final __, final sink) {
-              sink.add(AuthStatus.unauthenticated);
-            },
-          ),
-        );
+  Future<AuthStatus> fetchAuthState() async {
+    try {
+      final user = firebaseAuth.currentUser;
+      return switch (user == null) {
+        true => AuthStatus.unauthenticated,
+        false => AuthStatus.authenticated,
+      };
+    } on fa.FirebaseAuthException catch (e) {
+      throw AuthDataSourceException(e.code);
+    } catch (e) {
+      throw AuthDataSourceException(
+        'An unexpected error occurred while fetching auth state: $e',
+      );
+    }
   }
 }
