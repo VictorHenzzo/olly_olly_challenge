@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:injectable/injectable.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source.dart';
@@ -80,7 +79,6 @@ class GeolocatorDataSourceImpl implements GeolocationDataSource {
   }
 }
 
-@visibleForTesting
 class GeolocatorAdapter {
   const GeolocatorAdapter();
 
