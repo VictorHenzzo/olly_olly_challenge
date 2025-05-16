@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
 import 'package:olly_olly_challenge/core/data/repositories/geolocation_repository.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
 import 'package:olly_olly_challenge/core/domain/enums/location_access_permission.dart';
 
+import '../../../fixtures/position_fixture.dart';
 import '../../../mocks/data_sources/mock_geolocation_data_source.dart';
 
 void main() {
@@ -18,8 +18,10 @@ void main() {
   group('getCurrentPosition', () {
     test('should return position when data source succeeds', () async {
       // arrange
-      const position = (latitude: 1.0, longitude: 2.0);
-      dataSource.stubGetCurrentPosition(position);
+      final position = PositionFixture.entity();
+      dataSource.stubGetCurrentPosition(
+        (latitude: position.latitude, longitude: position.longitude),
+      );
 
       // act
       final result = await sut.getCurrentPosition();
@@ -28,7 +30,7 @@ void main() {
       expect(result.isRight, isTrue);
       expect(
         result.rightOrNull,
-        equals(const PositionEntity(latitude: 1, longitude: 2)),
+        equals(position),
       );
     });
 
