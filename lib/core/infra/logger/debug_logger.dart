@@ -1,6 +1,8 @@
+import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart' as logger;
 import 'package:olly_olly_challenge/core/infra/logger/logger.dart';
 
+@Injectable(as: Logger)
 class DebugLogger extends Logger {
   DebugLogger({
     required final logger.Logger logger,
