@@ -8,7 +8,7 @@ import 'package:olly_olly_challenge/core/navigation/routes/app_directions.dart';
 import 'package:olly_olly_challenge/main/blocs/auth_bloc/auth_observe_bloc.dart';
 
 import '../../../mocks/infra/app_navigator_mock.dart';
-import '../../../mocks/use_cases/mock_observe_auth_status_use_case.dart';
+import '../../../mocks/use_cases/auth/mock_observe_auth_status_use_case.dart';
 
 void main() {
   late AuthObserverBloc sut;
