@@ -1,9 +1,16 @@
 import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
 
+/// Base exception for all HTTP data source errors.
+///
+/// All exceptions thrown by the HTTP data source should extend this class.
+class HttpDataSourceException extends AppException {
+  const HttpDataSourceException(super.message);
+}
+
 /// Represents HTTP-specific exceptions that can occur during network requests.
 /// Each exception corresponds to a specific HTTP status code and optionally
 /// carries an Exception message.
-sealed class HttpException extends AppException {
+sealed class HttpException extends HttpDataSourceException {
   const HttpException(super.message, this.code);
 
   /// Creates an [HttpException] instance based on an HTTP status code.

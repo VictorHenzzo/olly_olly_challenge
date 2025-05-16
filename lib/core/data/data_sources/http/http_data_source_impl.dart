@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exception.dart';
+import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
 
 class HttpDataSourceImpl implements HttpDataSource {
@@ -17,12 +17,18 @@ class HttpDataSourceImpl implements HttpDataSource {
     final Uri uri, {
     final Map<String, String> headers = const {},
   }) async {
-    final response = await client.get(
-      uri,
-      headers: _decorateHeaders(headers),
-    );
-
-    return _transformResponse(response);
+    try {
+      final response = await client.get(
+        uri,
+        headers: _decorateHeaders(headers),
+      );
+      return _transformResponse(response);
+    } on HttpDataSourceException catch (_) {
+      rethrow;
+    } catch (e) {
+      if (e is HttpDataSourceException) rethrow;
+      throw HttpDataSourceException(e.toString());
+    }
   }
 
   @override
@@ -30,12 +36,17 @@ class HttpDataSourceImpl implements HttpDataSource {
     final Uri uri, {
     final Map<String, String> headers = const {},
   }) async {
-    final response = await client.delete(
-      uri,
-      headers: _decorateHeaders(headers),
-    );
-
-    return _transformResponse(response);
+    try {
+      final response = await client.delete(
+        uri,
+        headers: _decorateHeaders(headers),
+      );
+      return _transformResponse(response);
+    } on HttpDataSourceException catch (_) {
+      rethrow;
+    } catch (e) {
+      throw HttpDataSourceException(e.toString());
+    }
   }
 
   @override
@@ -44,13 +55,18 @@ class HttpDataSourceImpl implements HttpDataSource {
     final Map<String, dynamic> body = const {},
     final Map<String, String> headers = const {},
   }) async {
-    final response = await client.patch(
-      uri,
-      headers: _decorateHeaders(headers),
-      body: _encodeBody(body),
-    );
-
-    return _transformResponse(response);
+    try {
+      final response = await client.patch(
+        uri,
+        headers: _decorateHeaders(headers),
+        body: _encodeBody(body),
+      );
+      return _transformResponse(response);
+    } on HttpDataSourceException catch (_) {
+      rethrow;
+    } catch (e) {
+      throw HttpDataSourceException(e.toString());
+    }
   }
 
   @override
@@ -59,13 +75,18 @@ class HttpDataSourceImpl implements HttpDataSource {
     final Map<String, dynamic> body = const {},
     final Map<String, String> headers = const {},
   }) async {
-    final response = await client.post(
-      uri,
-      headers: _decorateHeaders(headers),
-      body: _encodeBody(body),
-    );
-
-    return _transformResponse(response);
+    try {
+      final response = await client.post(
+        uri,
+        headers: _decorateHeaders(headers),
+        body: _encodeBody(body),
+      );
+      return _transformResponse(response);
+    } on HttpDataSourceException catch (_) {
+      rethrow;
+    } catch (e) {
+      throw HttpDataSourceException(e.toString());
+    }
   }
 
   @override
@@ -74,13 +95,18 @@ class HttpDataSourceImpl implements HttpDataSource {
     final Map<String, dynamic> body = const {},
     final Map<String, String> headers = const {},
   }) async {
-    final response = await client.put(
-      uri,
-      headers: _decorateHeaders(headers),
-      body: _encodeBody(body),
-    );
-
-    return _transformResponse(response);
+    try {
+      final response = await client.put(
+        uri,
+        headers: _decorateHeaders(headers),
+        body: _encodeBody(body),
+      );
+      return _transformResponse(response);
+    } on HttpDataSourceException catch (_) {
+      rethrow;
+    } catch (e) {
+      throw HttpDataSourceException(e.toString());
+    }
   }
 
   Map<String, String> _decorateHeaders(final Map<String, String> headers) {

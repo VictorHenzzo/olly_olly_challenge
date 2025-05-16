@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source_impl.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exception.dart';
+import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
 import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
 
 import '../../../../test_helpers.dart';
@@ -68,7 +68,13 @@ void main() {
       // act & assert
       expect(
         () => dataSource.get(uri),
-        throwsA(exception),
+        throwsA(
+          isA<HttpDataSourceException>().having(
+            (final e) => e.message,
+            'message',
+            contains('Network error'),
+          ),
+        ),
       );
     });
 
@@ -150,7 +156,13 @@ void main() {
       // act & assert
       expect(
         () => dataSource.post(uri, body: body),
-        throwsA(exception),
+        throwsA(
+          isA<HttpDataSourceException>().having(
+            (final e) => e.message,
+            'message',
+            contains('Network error'),
+          ),
+        ),
       );
     });
 
@@ -232,7 +244,13 @@ void main() {
       // act & assert
       expect(
         () => dataSource.put(uri, body: body),
-        throwsA(exception),
+        throwsA(
+          isA<HttpDataSourceException>().having(
+            (final e) => e.message,
+            'message',
+            contains('Network error'),
+          ),
+        ),
       );
     });
 
@@ -314,7 +332,13 @@ void main() {
       // act & assert
       expect(
         () => dataSource.patch(uri, body: body),
-        throwsA(exception),
+        throwsA(
+          isA<HttpDataSourceException>().having(
+            (final e) => e.message,
+            'message',
+            contains('Network error'),
+          ),
+        ),
       );
     });
 
@@ -395,7 +419,13 @@ void main() {
       // act & assert
       expect(
         () => dataSource.delete(uri),
-        throwsA(exception),
+        throwsA(
+          isA<HttpDataSourceException>().having(
+            (final e) => e.message,
+            'message',
+            contains('Network error'),
+          ),
+        ),
       );
     });
 
