@@ -1,10 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// A responsive widget that builds different UIs based on screen width.
+/// A responsive widget that builds different UIs based on screen width,
+/// and overlays a colored banner indicating the current layout type.
 ///
-/// - small: width < 600
-/// - medium: 600 <= width < 1024
-/// - large: width >= 1024
+/// - small: width < 600  → BLUE banner
+/// - medium: 600 <= width < 1024 → ORANGE banner
+/// - large: width >= 1024 → GREEN banner
 class AdaptativeWidgetBuilder extends StatelessWidget {
   const AdaptativeWidgetBuilder({
     required this.small,
@@ -12,6 +14,8 @@ class AdaptativeWidgetBuilder extends StatelessWidget {
     required this.large,
     super.key,
   });
+
+  static const bool showDebugBanner = kDebugMode;
 
   final Widget Function(BuildContext context, BoxConstraints constraints) small;
   final Widget Function(BuildContext context, BoxConstraints constraints)
@@ -24,13 +28,39 @@ class AdaptativeWidgetBuilder extends StatelessWidget {
       builder: (final context, final constraints) {
         final width = constraints.maxWidth;
 
+        late final Widget child;
+        late final String label;
+        late final Color color;
+
         if (width < 600) {
-          return small(context, constraints);
+          child = small(context, constraints);
+          label = 'SMALL';
+          color = Colors.blue;
         } else if (width < 1024) {
-          return medium(context, constraints);
+          child = medium(context, constraints);
+          label = 'MEDIUM';
+          color = Colors.orange;
         } else {
-          return large(context, constraints);
+          child = large(context, constraints);
+          label = 'LARGE';
+          color = Colors.green;
         }
+
+        if (!showDebugBanner) {
+          return child;
+        }
+
+        return Banner(
+          message: label,
+          location: BannerLocation.topEnd,
+          color: color,
+          textStyle: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            letterSpacing: 1.5,
+          ),
+          child: child,
+        );
       },
     );
   }
