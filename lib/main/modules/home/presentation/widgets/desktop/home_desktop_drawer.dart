@@ -42,7 +42,7 @@ class _HomeDesktopDrawer extends StatelessWidget {
     return switch (state) {
       HomeInitial() => _loading(uiContext),
       HomeLoading() => _loading(uiContext),
-      (final HomeLoaded s) => _DrawerCurrentWeatherContent(state: s),
+      (final HomeLoaded s) => _CurrentWeatherContent(state: s, isDesktop: true),
       _ => _error(uiContext),
     };
   }

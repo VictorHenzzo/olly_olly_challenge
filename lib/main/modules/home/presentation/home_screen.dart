@@ -13,8 +13,10 @@ part 'widgets/mobile/home_screen_mobile.dart';
 part 'widgets/errors/permission_denied_error.dart';
 part 'widgets/errors/unknown_home_error.dart';
 part 'widgets/desktop/home_desktop_drawer.dart';
-part 'widgets/desktop/drawer_current_weather_content.dart';
+part 'widgets/weather/current_weather_content.dart';
 part 'widgets/desktop/forecast_report_desktop.dart';
+part 'widgets/mobile/home_mobile_tabs.dart';
+part 'widgets/weather/forecast_content.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({required this.bloc, super.key});
