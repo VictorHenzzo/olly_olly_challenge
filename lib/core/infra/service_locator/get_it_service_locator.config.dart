@@ -42,6 +42,7 @@ import '../../domain/use_cases/weather/fetch_current_weather_use_case.dart'
     as _i127;
 import '../../domain/use_cases/weather/fetch_forecast_report_use_case.dart'
     as _i135;
+import '../../navigation/navigation/app_navigator.dart' as _i364;
 import '../env/environment.dart' as _i579;
 import '../logger/debug_logger.dart' as _i197;
 import '../logger/logger.dart' as _i512;
@@ -60,49 +61,50 @@ _i174.GetIt $initGetIt(
   final authDataSourceModule = _$AuthDataSourceModule();
   final httpServiceLocatorModule = _$HttpServiceLocatorModule();
   gh.factory<_i579.Environment>(() => const _i579.Environment());
+  gh.factory<_i364.AppNavigator>(() => const _i364.AppNavigator());
   gh.lazySingleton<_i59.FirebaseAuth>(() => authDataSourceModule.firebaseAuth);
   gh.lazySingleton<_i519.Client>(() => httpServiceLocatorModule.httpClient);
+  gh.factory<_i512.Logger>(() => _i197.DebugLogger());
   gh.lazySingleton<_i563.AuthDataSource>(
       () => authDataSourceModule.authDataSource(gh<_i59.FirebaseAuth>()));
-  gh.factory<_i512.Logger>(() => _i197.DebugLogger());
-  gh.factory<_i1073.AuthRepository>(
-      () => _i895.AuthRepositoryImpl(gh<_i563.AuthDataSource>()));
-  gh.factory<_i251.SignUpUseCase>(
-      () => _i251.SignUpUseCaseImpl(gh<_i1073.AuthRepository>()));
   gh.lazySingleton<_i808.HttpDataSource>(
       () => httpServiceLocatorModule.httpDataSource(
             gh<_i519.Client>(),
             gh<_i512.Logger>(),
           ));
+  gh.factory<_i1073.AuthRepository>(
+      () => _i895.AuthRepositoryImpl(gh<_i563.AuthDataSource>()));
+  gh.factory<_i650.WeatherRepository>(() => _i312.WeatherRepositoryImpl(
+        httpDataSource: gh<_i808.HttpDataSource>(),
+        environment: gh<_i579.Environment>(),
+      ));
+  gh.factory<_i542.SignInUseCase>(
+      () => _i542.SignInUseCaseImpl(gh<_i1073.AuthRepository>()));
+  gh.factory<_i726.FetchAuthStatusUseCase>(
+      () => _i726.FetchAuthStatusUseCaseImpl(gh<_i1073.AuthRepository>()));
+  gh.factory<_i251.SignUpUseCase>(
+      () => _i251.SignUpUseCaseImpl(gh<_i1073.AuthRepository>()));
+  gh.factory<_i204.SignOutUseCase>(
+      () => _i204.SignOutUseCaseImpl(gh<_i1073.AuthRepository>()));
   gh.factoryParam<_i382.GeolocationDataSource, _i11.GeolocatorAdapter?,
       dynamic>((
     geolocatorAdapter,
     _,
   ) =>
       _i11.GeolocatorDataSourceImpl(geolocatorAdapter: geolocatorAdapter));
-  gh.factory<_i542.SignInUseCase>(
-      () => _i542.SignInUseCaseImpl(gh<_i1073.AuthRepository>()));
-  gh.factory<_i726.FetchAuthStatusUseCase>(
-      () => _i726.FetchAuthStatusUseCaseImpl(gh<_i1073.AuthRepository>()));
-  gh.factory<_i204.SignOutUseCase>(
-      () => _i204.SignOutUseCaseImpl(gh<_i1073.AuthRepository>()));
-  gh.factory<_i650.WeatherRepository>(() => _i312.WeatherRepositoryImpl(
-        httpDataSource: gh<_i808.HttpDataSource>(),
-        environment: gh<_i579.Environment>(),
-      ));
-  gh.factory<_i562.GeolocationRepository>(
-      () => _i351.GeolocationRepositoryImpl(gh<_i382.GeolocationDataSource>()));
   gh.factory<_i127.FetchCurrentWeatherUseCase>(() =>
       _i127.FetchCurrentWeatherUseCaseImpl(gh<_i650.WeatherRepository>()));
   gh.factory<_i135.FetchForecastReportUseCase>(() =>
       _i135.FetchForecastReportUseCaseImpl(gh<_i650.WeatherRepository>()));
-  gh.factory<_i419.FetchPositionUseCase>(
-      () => _i419.FetchPositionUseCaseImpl(gh<_i562.GeolocationRepository>()));
+  gh.factory<_i562.GeolocationRepository>(
+      () => _i351.GeolocationRepositoryImpl(gh<_i382.GeolocationDataSource>()));
   gh.factory<_i1065.OpenAppSettingsUseCase>(
       () => _i1065.OpenAppSettingsUseCaseImpl(
             gh<_i562.GeolocationRepository>(),
             isWeb: gh<bool>(),
           ));
+  gh.factory<_i419.FetchPositionUseCase>(
+      () => _i419.FetchPositionUseCaseImpl(gh<_i562.GeolocationRepository>()));
   return getIt;
 }
 
