@@ -24,6 +24,7 @@ class _HomeScreenMobile extends StatelessWidget {
           ),
         ),
         backgroundColor: uiContext.colorScheme.primary,
+        foregroundColor: uiContext.colorScheme.onPrimary,
         actions: [
           IconButton(onPressed: signOut, icon: const Icon(Icons.logout)),
         ],

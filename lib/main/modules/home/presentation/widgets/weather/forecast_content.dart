@@ -93,7 +93,7 @@ class _ForecastContentState extends State<_ForecastContent> {
 
   Widget _buildMobile(final UiContext uiContext) {
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -177,12 +177,11 @@ class _ForecastDayCard extends StatelessWidget {
                 color: color,
               ),
             ),
-            const SizedBox(height: 8),
-            if (icon != null)
+            if (icon != null) ...[
+              const Spacer(),
               SizedBox.square(
-                dimension: 60,
+                dimension: 45,
                 child: Container(
-                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(16),
@@ -190,6 +189,7 @@ class _ForecastDayCard extends StatelessWidget {
                   child: WeatherIconViewer(icon),
                 ),
               ),
+            ],
           ],
         ),
       ),

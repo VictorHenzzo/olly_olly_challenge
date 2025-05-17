@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// A responsive widget that builds different UIs based on screen width,
@@ -10,7 +9,7 @@ class AdaptativeWidgetBuilder extends StatelessWidget {
     super.key,
   });
 
-  static const bool showDebugBanner = kDebugMode;
+  static const bool showDebugBanner = false;
 
   final Widget Function(BuildContext context, BoxConstraints constraints)
       mobile;

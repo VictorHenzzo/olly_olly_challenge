@@ -18,7 +18,7 @@ class _CurrentWeatherContent extends StatelessWidget {
 
   Widget _buildMobile(final UiContext uiContext) {
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
       child: Column(
         children: [
           const SizedBox(height: 16),
@@ -31,9 +31,7 @@ class _CurrentWeatherContent extends StatelessWidget {
           Align(child: _temperature(uiContext)),
           const SizedBox(height: 24),
           _divider(uiContext),
-          const SizedBox(height: 16),
           Expanded(child: _buildCurrentWeatherInfo(uiContext)),
-          const SizedBox(height: 16),
         ],
       ),
     );
@@ -71,16 +69,17 @@ class _CurrentWeatherContent extends StatelessWidget {
 
   Widget _cityInfo(final UiContext uiContext) {
     final city = state.forecastReport.city;
+    final color = _getAccentColor(uiContext);
     return Row(
       mainAxisAlignment:
           isDesktop ? MainAxisAlignment.start : MainAxisAlignment.center,
       children: [
-        Icon(Icons.location_on, color: uiContext.colorScheme.onPrimary),
+        Icon(Icons.location_on, color: color),
         const SizedBox(width: 8),
         Text(
           '${city.name}, ${city.country}',
           style: uiContext.textTheme.titleLarge?.copyWith(
-            color: _getAccentColor(uiContext),
+            color: color,
           ),
         ),
       ],
@@ -92,8 +91,10 @@ class _CurrentWeatherContent extends StatelessWidget {
     final dateStr =
         "${now.day.toString().padLeft(2, '0')} ${now.monthName()} ${now.year}";
 
+    final text = isDesktop ? 'Current weather now, $dateStr' : dateStr;
+
     return Text(
-      'Current weather now, $dateStr',
+      text,
       style: uiContext.textTheme.bodyLarge?.copyWith(
         color: _getAccentColor(uiContext),
       ),
@@ -216,6 +217,7 @@ class _CurrentWeatherContent extends StatelessWidget {
 
     return ListView.separated(
       itemCount: children.length,
+      padding: const EdgeInsets.symmetric(vertical: 12),
       separatorBuilder: (final _, final __) => const SizedBox(height: 4),
       itemBuilder: (final _, final index) {
         return children[index];
