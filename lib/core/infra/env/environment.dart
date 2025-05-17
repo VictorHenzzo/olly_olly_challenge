@@ -11,6 +11,9 @@ class Environment {
   String get weatherApiBaseUrl => const String.fromEnvironment(
         'weather_api_base_url',
       );
+  String get weatherApiIconUrl => const String.fromEnvironment(
+        'weather_api_icon_url',
+      );
 
   FirebaseOptions get web => const FirebaseOptions(
         apiKey: String.fromEnvironment('web_firebase_apiKey'),

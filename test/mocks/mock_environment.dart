@@ -9,6 +9,9 @@ class MockEnvironment implements Environment {
   String get weatherApiKey => '1234567890';
 
   @override
+  String get weatherApiIconUrl => 'https://api.some-mock-api.com/img/wn';
+
+  @override
   FirebaseOptions get android => throw UnimplementedError();
 
   @override
