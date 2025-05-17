@@ -1,7 +1,7 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/geolocation/open_app_settings_use_case.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:weather_app/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
+import 'package:weather_app/core/domain/use_cases/geolocation/open_app_settings_use_case.dart';
+import 'package:weather_app/core/infra/either/either.dart';
 
 class MockOpenAppSettingsUseCase extends Mock
     implements OpenAppSettingsUseCase {

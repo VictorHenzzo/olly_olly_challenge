@@ -1,9 +1,9 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
-import 'package:olly_olly_challenge/core/domain/enums/location_access_permission.dart';
-import 'package:olly_olly_challenge/core/domain/repositories/geolocation_repository.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:weather_app/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/domain/enums/location_access_permission.dart';
+import 'package:weather_app/core/domain/repositories/geolocation_repository.dart';
+import 'package:weather_app/core/infra/either/either.dart';
 
 class MockGeolocationRepository extends Mock implements GeolocationRepository {
   void stubGetCurrentPosition(final PositionEntity position) {

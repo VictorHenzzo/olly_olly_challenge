@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/logger_data_source_decorator.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/data/data_sources/http/logger_data_source_decorator.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 import '../../../../mocks/data_sources/mock_http_data_source.dart';
 import '../../../../mocks/infra/mock_logger.dart';

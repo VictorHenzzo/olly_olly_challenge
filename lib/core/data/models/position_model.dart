@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
 
 class PositionModel extends PositionEntity {
   const PositionModel({

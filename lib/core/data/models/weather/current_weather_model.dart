@@ -1,12 +1,12 @@
-import 'package:olly_olly_challenge/core/data/models/weather/cloud_status_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/weather_conditions_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/weather_status_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/wind_status_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/cloud_status_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/current_weather_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_conditions_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_status_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/wind_status_entity.dart';
+import 'package:weather_app/core/data/models/weather/cloud_status_model.dart';
+import 'package:weather_app/core/data/models/weather/weather_conditions_model.dart';
+import 'package:weather_app/core/data/models/weather/weather_status_model.dart';
+import 'package:weather_app/core/data/models/weather/wind_status_model.dart';
+import 'package:weather_app/core/domain/entities/weather/cloud_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/current_weather_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_conditions_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/wind_status_entity.dart';
 
 class CurrentWeatherModel extends CurrentWeatherEntity {
   const CurrentWeatherModel({

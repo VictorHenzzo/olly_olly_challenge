@@ -1,5 +1,5 @@
-import 'package:olly_olly_challenge/core/data/models/weather/weather_status_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_status_entity.dart';
+import 'package:weather_app/core/data/models/weather/weather_status_model.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_status_entity.dart';
 
 abstract class WeatherStatusFixture {
   static WeatherStatusEntity entity() => const WeatherStatusEntity(

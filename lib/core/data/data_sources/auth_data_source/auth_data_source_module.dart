@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/firebase_data_source_impl.dart';
+import 'package:weather_app/core/data/data_sources/auth_data_source/auth_data_source.dart';
+import 'package:weather_app/core/data/data_sources/auth_data_source/firebase_data_source_impl.dart';
 
 @module
 abstract class AuthDataSourceModule {

@@ -1,8 +1,8 @@
 import 'package:geolocator/geolocator.dart' as geo;
 import 'package:injectable/injectable.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
-import 'package:olly_olly_challenge/core/domain/enums/location_access_permission.dart';
+import 'package:weather_app/core/data/data_sources/geolocation_data_source/geolocation_data_source.dart';
+import 'package:weather_app/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
+import 'package:weather_app/core/domain/enums/location_access_permission.dart';
 
 @Injectable(as: GeolocationDataSource)
 class GeolocatorDataSourceImpl implements GeolocationDataSource {

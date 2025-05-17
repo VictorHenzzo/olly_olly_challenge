@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/cloud_status_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_conditions_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_status_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/wind_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/cloud_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_conditions_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/wind_status_entity.dart';
 
 class ForecastEntryEntity extends Equatable {
   const ForecastEntryEntity({

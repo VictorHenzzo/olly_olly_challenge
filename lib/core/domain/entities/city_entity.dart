@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
 
 /// Represents a city with its geographical and temporal information.
 class CityEntity extends Equatable {

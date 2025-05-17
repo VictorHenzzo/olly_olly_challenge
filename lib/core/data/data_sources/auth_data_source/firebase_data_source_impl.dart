@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart' as fa;
-import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/auth_data_source/auth_data_source_exception.dart';
-import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
+import 'package:weather_app/core/data/data_sources/auth_data_source/auth_data_source.dart';
+import 'package:weather_app/core/data/data_sources/auth_data_source/auth_data_source_exception.dart';
+import 'package:weather_app/core/domain/enums/auth/auth_status.dart';
 
 class FirebaseDataSourceImpl implements AuthDataSource {
   FirebaseDataSourceImpl(this.firebaseAuth);

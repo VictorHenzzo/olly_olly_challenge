@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source_impl.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/data/data_sources/http/http_data_source_impl.dart';
+import 'package:weather_app/core/data/data_sources/http/http_exceptions.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
 
 import '../../../../test_helpers.dart';
 

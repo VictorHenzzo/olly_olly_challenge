@@ -1,8 +1,8 @@
-import 'package:olly_olly_challenge/core/data/models/city_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/forecast_entry_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/city_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/forecast_entry_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/forecast_report_entity.dart';
+import 'package:weather_app/core/data/models/city_model.dart';
+import 'package:weather_app/core/data/models/weather/forecast_entry_model.dart';
+import 'package:weather_app/core/domain/entities/city_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/forecast_entry_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/forecast_report_entity.dart';
 
 class ForecastReportModel extends ForecastReportEntity {
   const ForecastReportModel({

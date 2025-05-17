@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
-import 'package:olly_olly_challenge/core/data/repositories/weather_repository_impl.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/data/data_sources/http/http_exceptions.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/data/repositories/weather_repository_impl.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 import '../../../../test/mocks/data_sources/mock_http_data_source.dart';
 import '../../../fixtures/position_fixture.dart';

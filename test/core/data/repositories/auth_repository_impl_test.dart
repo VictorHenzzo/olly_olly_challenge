@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/repositories/auth_repository_impl.dart';
-import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptions.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_up_exceptions.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/data/repositories/auth_repository_impl.dart';
+import 'package:weather_app/core/domain/enums/auth/auth_status.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_in_exceptions.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_up_exceptions.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 import '../../../mocks/data_sources/mock_auth_data_source.dart';
 

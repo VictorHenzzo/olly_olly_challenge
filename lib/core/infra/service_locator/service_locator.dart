@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/infra/service_locator/get_it_service_locator.dart';
+import 'package:weather_app/core/infra/service_locator/get_it_service_locator.dart';
 
 abstract class ServiceLocator {
   factory ServiceLocator() => const GetItServiceLocator();

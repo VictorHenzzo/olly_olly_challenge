@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
-import 'package:olly_olly_challenge/core/data/repositories/geolocation_repository.dart';
-import 'package:olly_olly_challenge/core/domain/enums/location_access_permission.dart';
+import 'package:weather_app/core/data/data_sources/geolocation_data_source/geolocation_data_source_exception.dart';
+import 'package:weather_app/core/data/repositories/geolocation_repository.dart';
+import 'package:weather_app/core/domain/enums/location_access_permission.dart';
 
 import '../../../fixtures/position_fixture.dart';
 import '../../../mocks/data_sources/mock_geolocation_data_source.dart';

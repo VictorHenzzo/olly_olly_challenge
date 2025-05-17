@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
+import 'package:weather_app/core/data/data_sources/http/http_exceptions.dart';
 
 void main() {
   group('HttpException', () {

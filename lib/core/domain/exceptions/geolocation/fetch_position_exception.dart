@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 sealed class FetchPositionException extends AppException {
   const FetchPositionException([super.message]);

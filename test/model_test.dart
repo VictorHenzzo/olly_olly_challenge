@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:olly_olly_challenge/core/data/models/city_model.dart';
-import 'package:olly_olly_challenge/core/data/models/position_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/cloud_status_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/current_weather_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/forecast_entry_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/forecast_report_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/weather_conditions_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/weather_status_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/wind_status_model.dart';
+import 'package:weather_app/core/data/models/city_model.dart';
+import 'package:weather_app/core/data/models/position_model.dart';
+import 'package:weather_app/core/data/models/weather/cloud_status_model.dart';
+import 'package:weather_app/core/data/models/weather/current_weather_model.dart';
+import 'package:weather_app/core/data/models/weather/forecast_entry_model.dart';
+import 'package:weather_app/core/data/models/weather/forecast_report_model.dart';
+import 'package:weather_app/core/data/models/weather/weather_conditions_model.dart';
+import 'package:weather_app/core/data/models/weather/weather_status_model.dart';
+import 'package:weather_app/core/data/models/weather/wind_status_model.dart';
 
 import 'fixtures/city_fixture.dart';
 import 'fixtures/position_fixture.dart';

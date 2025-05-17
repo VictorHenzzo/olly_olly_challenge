@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/data/data_sources/http/http_data_source.dart';
+import 'package:weather_app/core/data/data_sources/http/http_exceptions.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
 
 class HttpDataSourceImpl implements HttpDataSource {
   HttpDataSourceImpl({

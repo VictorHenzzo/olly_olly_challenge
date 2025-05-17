@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/domain/entities/weather/wind_status_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/wind_status_entity.dart';
 
 class WindStatusModel extends WindStatusEntity {
   const WindStatusModel({

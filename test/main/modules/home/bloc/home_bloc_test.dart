@@ -1,11 +1,11 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/geolocation/fetch_position_exception.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
-import 'package:olly_olly_challenge/core/navigation/routes/app_directions.dart';
-import 'package:olly_olly_challenge/main/modules/home/bloc/home_bloc.dart';
+import 'package:weather_app/core/domain/exceptions/geolocation/fetch_position_exception.dart';
+import 'package:weather_app/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/navigation/routes/app_directions.dart';
+import 'package:weather_app/main/modules/home/bloc/home_bloc.dart';
 
 import '../../../../fixtures/position_fixture.dart';
 import '../../../../fixtures/weather/current_weather_fixture.dart';

@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 sealed class SignUpException extends AppException {
   const SignUpException([super.message]);

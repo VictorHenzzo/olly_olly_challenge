@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
+import 'package:weather_app/core/domain/enums/auth/auth_status.dart';
 
 abstract class AuthDataSource {
   Future<void> signInWithEmailAndPassword(

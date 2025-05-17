@@ -1,10 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptions.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_up_exceptions.dart';
-import 'package:olly_olly_challenge/core/navigation/routes/app_directions.dart';
-import 'package:olly_olly_challenge/main/modules/auth/bloc/auth_bloc.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_in_exceptions.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_up_exceptions.dart';
+import 'package:weather_app/core/navigation/routes/app_directions.dart';
+import 'package:weather_app/main/modules/auth/bloc/auth_bloc.dart';
 
 import '../../../../mocks/infra/app_navigator_mock.dart';
 import '../../../../mocks/use_cases/auth/mock_sign_in_use_case.dart';

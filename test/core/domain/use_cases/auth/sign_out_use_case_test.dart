@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/auth/sign_out_use_case.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/domain/use_cases/auth/sign_out_use_case.dart';
+import 'package:weather_app/core/infra/either/either.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 import '../../../../mocks/repositories/mock_auth_repository.dart';
 

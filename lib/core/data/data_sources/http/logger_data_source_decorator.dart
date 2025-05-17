@@ -1,6 +1,6 @@
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
-import 'package:olly_olly_challenge/core/infra/logger/logger.dart';
+import 'package:weather_app/core/data/data_sources/http/http_data_source.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/infra/logger/logger.dart';
 
 class LoggerDataSourceDecorator implements HttpDataSource {
   LoggerDataSourceDecorator({

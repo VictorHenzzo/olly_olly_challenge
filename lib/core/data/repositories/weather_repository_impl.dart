@@ -1,17 +1,17 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart' show Injectable;
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_exceptions.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/current_weather_model.dart';
-import 'package:olly_olly_challenge/core/data/models/weather/forecast_report_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/current_weather_entity.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/forecast_report_entity.dart';
-import 'package:olly_olly_challenge/core/domain/repositories/weather_repository.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
-import 'package:olly_olly_challenge/core/infra/env/environment.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/data/data_sources/http/http_data_source.dart';
+import 'package:weather_app/core/data/data_sources/http/http_exceptions.dart';
+import 'package:weather_app/core/data/models/weather/current_weather_model.dart';
+import 'package:weather_app/core/data/models/weather/forecast_report_model.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/current_weather_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/forecast_report_entity.dart';
+import 'package:weather_app/core/domain/repositories/weather_repository.dart';
+import 'package:weather_app/core/infra/either/either.dart';
+import 'package:weather_app/core/infra/env/environment.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 @Injectable(as: WeatherRepository)
 class WeatherRepositoryImpl extends WeatherRepository {

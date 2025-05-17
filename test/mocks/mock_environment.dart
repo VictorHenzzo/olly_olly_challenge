@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/infra/env/environment.dart';
+import 'package:weather_app/core/infra/env/environment.dart';
 
 class MockEnvironment implements Environment {
   @override

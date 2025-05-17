@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart' as l;
-import 'package:olly_olly_challenge/core/infra/logger/logger.dart';
+import 'package:weather_app/core/infra/logger/logger.dart';
 
 @Injectable(as: Logger)
 class DebugLogger extends Logger {

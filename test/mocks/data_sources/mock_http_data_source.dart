@@ -1,6 +1,6 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_data_source.dart';
-import 'package:olly_olly_challenge/core/data/data_sources/http/http_response.dart';
+import 'package:weather_app/core/data/data_sources/http/http_data_source.dart';
+import 'package:weather_app/core/data/data_sources/http/http_response.dart';
 
 class MockHttpDataSource extends Mock implements HttpDataSource {
   void stubGet(final HttpResponse response) {

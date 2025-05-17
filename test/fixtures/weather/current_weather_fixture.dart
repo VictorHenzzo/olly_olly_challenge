@@ -1,5 +1,5 @@
-import 'package:olly_olly_challenge/core/data/models/weather/current_weather_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/weather/current_weather_entity.dart';
+import 'package:weather_app/core/data/models/weather/current_weather_model.dart';
+import 'package:weather_app/core/domain/entities/weather/current_weather_entity.dart';
 
 import 'cloud_status_fixture.dart';
 import 'weather_conditions_fixture.dart';

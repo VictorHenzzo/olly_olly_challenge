@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:olly_olly_challenge/core/infra/service_locator/get_it_service_locator.config.dart';
-import 'package:olly_olly_challenge/core/infra/service_locator/service_locator.dart';
+import 'package:weather_app/core/infra/service_locator/get_it_service_locator.config.dart';
+import 'package:weather_app/core/infra/service_locator/service_locator.dart';
 
 @InjectableInit(
   initializerName: r'$initGetIt',

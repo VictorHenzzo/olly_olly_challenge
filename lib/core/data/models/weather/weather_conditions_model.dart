@@ -1,4 +1,4 @@
-import 'package:olly_olly_challenge/core/domain/entities/weather/weather_conditions_entity.dart';
+import 'package:weather_app/core/domain/entities/weather/weather_conditions_entity.dart';
 
 class WeatherConditionsModel extends WeatherConditionsEntity {
   const WeatherConditionsModel({

@@ -1,5 +1,5 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/infra/logger/logger.dart';
+import 'package:weather_app/core/infra/logger/logger.dart';
 
 class MockLogger extends Mock implements Logger {
   void stubInfo() {

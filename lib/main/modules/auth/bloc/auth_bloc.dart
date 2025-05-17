@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptions.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_up_exceptions.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/auth/sign_in_use_case.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/auth/sign_up_use_case.dart';
-import 'package:olly_olly_challenge/core/navigation/navigation/app_navigator.dart';
-import 'package:olly_olly_challenge/core/navigation/routes/app_directions.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_in_exceptions.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_up_exceptions.dart';
+import 'package:weather_app/core/domain/use_cases/auth/sign_in_use_case.dart';
+import 'package:weather_app/core/domain/use_cases/auth/sign_up_use_case.dart';
+import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/routes/app_directions.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

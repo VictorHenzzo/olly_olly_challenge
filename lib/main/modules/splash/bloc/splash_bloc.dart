@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:olly_olly_challenge/core/domain/enums/auth/auth_status.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/auth/fetch_auth_status_use_case.dart';
-import 'package:olly_olly_challenge/core/navigation/navigation/app_navigator.dart';
-import 'package:olly_olly_challenge/core/navigation/routes/app_directions.dart';
+import 'package:weather_app/core/domain/enums/auth/auth_status.dart';
+import 'package:weather_app/core/domain/use_cases/auth/fetch_auth_status_use_case.dart';
+import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/routes/app_directions.dart';
 
 part 'splash_event.dart';
 part 'splash_state.dart';

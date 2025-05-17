@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/entities/position_entity.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/weather/fetch_current_weather_use_case.dart';
-import 'package:olly_olly_challenge/core/infra/exception/app_exception.dart';
+import 'package:weather_app/core/domain/entities/position_entity.dart';
+import 'package:weather_app/core/domain/use_cases/weather/fetch_current_weather_use_case.dart';
+import 'package:weather_app/core/infra/exception/app_exception.dart';
 
 import '../../../../fixtures/position_fixture.dart';
 import '../../../../fixtures/weather/current_weather_fixture.dart';

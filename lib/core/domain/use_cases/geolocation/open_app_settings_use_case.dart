@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
-import 'package:olly_olly_challenge/core/domain/repositories/geolocation_repository.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:weather_app/core/domain/exceptions/geolocation/open_app_settings_exception.dart';
+import 'package:weather_app/core/domain/repositories/geolocation_repository.dart';
+import 'package:weather_app/core/infra/either/either.dart';
 
 abstract class OpenAppSettingsUseCase {
   Future<Either<OpenAppSettingsException, void>> call();

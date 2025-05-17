@@ -1,5 +1,5 @@
-import 'package:olly_olly_challenge/core/data/models/city_model.dart';
-import 'package:olly_olly_challenge/core/domain/entities/city_entity.dart';
+import 'package:weather_app/core/data/models/city_model.dart';
+import 'package:weather_app/core/domain/entities/city_entity.dart';
 
 import 'position_fixture.dart';
 

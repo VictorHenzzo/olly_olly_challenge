@@ -1,7 +1,7 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:olly_olly_challenge/core/domain/exceptions/auth/sign_in_exceptions.dart';
-import 'package:olly_olly_challenge/core/domain/use_cases/auth/sign_in_use_case.dart';
-import 'package:olly_olly_challenge/core/infra/either/either.dart';
+import 'package:weather_app/core/domain/exceptions/auth/sign_in_exceptions.dart';
+import 'package:weather_app/core/domain/use_cases/auth/sign_in_use_case.dart';
+import 'package:weather_app/core/infra/either/either.dart';
 
 class MockSignInUseCase extends Mock implements SignInUseCase {
   void stubSignIn() {
