@@ -12,8 +12,8 @@ abstract class OpenAppSettingsUseCase {
 class OpenAppSettingsUseCaseImpl implements OpenAppSettingsUseCase {
   OpenAppSettingsUseCaseImpl(
     this._repository, {
-    this.isWeb = kIsWeb,
-  });
+    @factoryParam final bool? isWeb,
+  }) : isWeb = isWeb ?? kIsWeb;
 
   final GeolocationRepository _repository;
   final bool isWeb;

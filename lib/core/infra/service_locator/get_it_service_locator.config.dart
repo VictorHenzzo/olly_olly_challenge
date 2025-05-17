@@ -98,11 +98,14 @@ _i174.GetIt $initGetIt(
       _i135.FetchForecastReportUseCaseImpl(gh<_i650.WeatherRepository>()));
   gh.factory<_i562.GeolocationRepository>(
       () => _i351.GeolocationRepositoryImpl(gh<_i382.GeolocationDataSource>()));
-  gh.factory<_i1065.OpenAppSettingsUseCase>(
-      () => _i1065.OpenAppSettingsUseCaseImpl(
-            gh<_i562.GeolocationRepository>(),
-            isWeb: gh<bool>(),
-          ));
+  gh.factoryParam<_i1065.OpenAppSettingsUseCase, bool?, dynamic>((
+    isWeb,
+    _,
+  ) =>
+      _i1065.OpenAppSettingsUseCaseImpl(
+        gh<_i562.GeolocationRepository>(),
+        isWeb: isWeb,
+      ));
   gh.factory<_i419.FetchPositionUseCase>(
       () => _i419.FetchPositionUseCaseImpl(gh<_i562.GeolocationRepository>()));
   return getIt;
