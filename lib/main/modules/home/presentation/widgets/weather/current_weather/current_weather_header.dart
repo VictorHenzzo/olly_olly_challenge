@@ -16,7 +16,6 @@ class _CurrentWeatherHeader extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _cityInfo(uiContext),
         const SizedBox(height: 4),
