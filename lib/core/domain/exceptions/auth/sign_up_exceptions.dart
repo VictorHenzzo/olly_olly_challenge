@@ -1,8 +1,10 @@
 import 'package:weather_app/core/infra/exception/app_exception.dart';
 
+/// Base exception class for sign up related errors.
 sealed class SignUpException extends AppException {
   const SignUpException([super.message]);
 
+  /// Creates a [SignUpException] from a given error code.
   factory SignUpException.fromCode(final String code) {
     switch (code) {
       case 'email-already-in-use':

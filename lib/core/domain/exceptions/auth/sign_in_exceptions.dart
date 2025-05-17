@@ -1,8 +1,10 @@
 import 'package:weather_app/core/infra/exception/app_exception.dart';
 
+/// Base exception class for sign in related errors.
 sealed class SignInException extends AppException {
   const SignInException([super.message]);
 
+  /// Creates a [SignInException] from a given error code.
   factory SignInException.fromCode(final String code) {
     switch (code) {
       case 'invalid-credential':

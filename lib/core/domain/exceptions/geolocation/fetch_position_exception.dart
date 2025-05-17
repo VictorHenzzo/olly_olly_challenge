@@ -1,5 +1,6 @@
 import 'package:weather_app/core/infra/exception/app_exception.dart';
 
+/// Base exception class for geolocation position fetching errors.
 sealed class FetchPositionException extends AppException {
   const FetchPositionException([super.message]);
 }
