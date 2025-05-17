@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/main/modules/splash/bloc/splash_bloc.dart';
-import 'package:weather_app/main/shared/ui_context.dart';
+import 'package:weather_app/main/shared/widgets/screen_loading.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({required this.bloc, super.key});
@@ -20,21 +20,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(final BuildContext context) {
-    final uiContext = UiContext.of(context);
-    final dimension = uiContext.shp(10);
-    final width = uiContext.shp(1.5);
-
-    return Scaffold(
-      body: Center(
-        child: SizedBox.square(
-          dimension: dimension,
-          child: CircularProgressIndicator(
-            strokeCap: StrokeCap.round,
-            strokeWidth: width,
-            color: uiContext.colorScheme.primary,
-          ),
-        ),
-      ),
-    );
+    return const Scaffold(body: ScreenLoading());
   }
 }
