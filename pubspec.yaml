@@ -18,9 +18,9 @@ dependencies:
   flutter_bloc: 9.1.1
   geolocator: 14.0.0
   get_it: 8.0.3
+  google_fonts: ^6.2.1
   http: 1.4.0
   injectable: 2.5.0
-  json_theme: ^8.0.0+2
   logger: 2.5.0
 
 dev_dependencies:
@@ -35,6 +35,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - assets/theme.json
