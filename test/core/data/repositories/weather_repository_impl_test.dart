@@ -11,7 +11,7 @@ import '../../../../test/mocks/data_sources/mock_http_data_source.dart';
 import '../../../fixtures/position_fixture.dart';
 import '../../../fixtures/weather/current_weather_fixture.dart';
 import '../../../fixtures/weather/forecast_report_fixture.dart';
-import '../../../mocks/mock_environment.dart';
+import '../../../mocks/infra/mock_environment.dart';
 import '../../../test_helpers.dart';
 
 void main() {
