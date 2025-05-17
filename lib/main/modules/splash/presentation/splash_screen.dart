@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // widget.bloc.add(const InitializeSplashEvent());
+    widget.bloc.add(const InitializeSplashEvent());
     super.initState();
   }
 
