@@ -5,21 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "olly_olly_challenge",
+            "name": "debug",
             "request": "launch",
             "type": "dart"
-        },
-        {
-            "name": "olly_olly_challenge (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "olly_olly_challenge (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
         }
     ]
 }
