@@ -4,7 +4,10 @@ import 'package:weather_app/core/domain/entities/weather/weather_conditions_enti
 import 'package:weather_app/core/domain/entities/weather/weather_status_entity.dart';
 import 'package:weather_app/core/domain/entities/weather/wind_status_entity.dart';
 
+/// Represents a single forecast entry for a specific date and time.
+/// Contains weather conditions, wind, clouds, and visibility for that period.
 class ForecastEntryEntity extends Equatable {
+  /// Creates a [ForecastEntryEntity] for a given date/time and weather data.
   const ForecastEntryEntity({
     required this.dateTime,
     required this.conditions,
@@ -14,11 +17,22 @@ class ForecastEntryEntity extends Equatable {
     required this.visibility,
   });
 
+  /// The date and time of this forecast entry.
   final DateTime dateTime;
+
+  /// Main weather conditions (temperature, pressure, humidity, etc).
   final WeatherConditionsEntity conditions;
+
+  /// Wind status (speed, direction, gust).
   final WindStatusEntity wind;
+
+  /// Cloud coverage information.
   final CloudStatusEntity clouds;
+
+  /// List of weather status (e.g., rain, snow, clear, etc).
   final List<WeatherStatusEntity> weather;
+
+  /// Visibility in meters.
   final double visibility;
 
   @override
