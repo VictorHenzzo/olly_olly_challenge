@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    widget.bloc.add(const InitializeSplashEvent());
+    // widget.bloc.add(const InitializeSplashEvent());
     super.initState();
   }
 
@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(final BuildContext context) {
     final uiContext = UiContext.of(context);
     final dimension = uiContext.shp(10);
+    final width = uiContext.shp(1.5);
 
     return Scaffold(
       body: Center(
@@ -29,9 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
           dimension: dimension,
           child: CircularProgressIndicator(
             strokeCap: StrokeCap.round,
-            strokeWidth: 10,
-            backgroundColor: uiContext.colorScheme.primary,
-            color: uiContext.colorScheme.onPrimary,
+            strokeWidth: width,
+            color: uiContext.colorScheme.primary,
           ),
         ),
       ),

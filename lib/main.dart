@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final textTheme = createTextTheme(context, 'Open Sans', 'Roboto Slab');
-    final theme = AppTheme(textTheme).dark();
+    final theme = AppTheme(textTheme).light();
 
     return MaterialApp(
       title: 'Weather App',
