@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:weather_app/core/infra/env/environment.dart';
 
 class MockEnvironment implements Environment {
@@ -6,4 +7,13 @@ class MockEnvironment implements Environment {
 
   @override
   String get weatherApiKey => '1234567890';
+
+  @override
+  FirebaseOptions get android => throw UnimplementedError();
+
+  @override
+  FirebaseOptions get ios => throw UnimplementedError();
+
+  @override
+  FirebaseOptions get web => throw UnimplementedError();
 }
