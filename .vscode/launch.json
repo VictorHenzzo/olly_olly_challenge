@@ -11,6 +11,7 @@
             "program": "lib/main.dart",
             "args": [
                 "--dart-define-from-file=env/environment.json",
+                "--web-port=50000"
             ],
         }
     ]
