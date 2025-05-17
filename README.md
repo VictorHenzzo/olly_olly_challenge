@@ -25,7 +25,7 @@ For an overview of the app’s structure, design decisions, and layer responsibi
 
 - Flutter 3.29.3
 - An OpenWeatherMap API Key
-- A Firebase project\
+- A Firebase project
 
 ### Clone
 
