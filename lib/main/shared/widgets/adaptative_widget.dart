@@ -3,24 +3,19 @@ import 'package:flutter/material.dart';
 
 /// A responsive widget that builds different UIs based on screen width,
 /// and overlays a colored banner indicating the current layout type.
-///
-/// - small: width < 600  → BLUE banner
-/// - medium: 600 <= width < 1024 → ORANGE banner
-/// - large: width >= 1024 → GREEN banner
 class AdaptativeWidgetBuilder extends StatelessWidget {
   const AdaptativeWidgetBuilder({
-    required this.small,
-    required this.medium,
-    required this.large,
+    required this.mobile,
+    required this.desktop,
     super.key,
   });
 
   static const bool showDebugBanner = kDebugMode;
 
-  final Widget Function(BuildContext context, BoxConstraints constraints) small;
   final Widget Function(BuildContext context, BoxConstraints constraints)
-      medium;
-  final Widget Function(BuildContext context, BoxConstraints constraints) large;
+      mobile;
+  final Widget Function(BuildContext context, BoxConstraints constraints)
+      desktop;
 
   @override
   Widget build(final BuildContext context) {
@@ -33,16 +28,12 @@ class AdaptativeWidgetBuilder extends StatelessWidget {
         late final Color color;
 
         if (width < 600) {
-          child = small(context, constraints);
-          label = 'SMALL';
+          child = mobile(context, constraints);
+          label = 'MOBILE';
           color = Colors.blue;
-        } else if (width < 1024) {
-          child = medium(context, constraints);
-          label = 'MEDIUM';
-          color = Colors.orange;
         } else {
-          child = large(context, constraints);
-          label = 'LARGE';
+          child = desktop(context, constraints);
+          label = 'DESKTOP';
           color = Colors.green;
         }
 
