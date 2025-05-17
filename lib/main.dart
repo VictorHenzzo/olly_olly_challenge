@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/core/infra/firebase/firebase_initializer.dart';
 import 'package:weather_app/core/infra/service_locator/service_locator.dart';
 import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await const FirebaseInitializer().initialize();
   await ServiceLocator().initialize();
+  Intl.defaultLocale = 'en_US';
   runApp(const MyApp());
 }
 
