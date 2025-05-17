@@ -13,17 +13,17 @@ class _HomeMobileTabs extends StatefulWidget {
 
 class _HomeMobileTabsState extends State<_HomeMobileTabs>
     with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
+  late final TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 2, vsync: this);
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 
@@ -35,7 +35,7 @@ class _HomeMobileTabsState extends State<_HomeMobileTabs>
         ColoredBox(
           color: uiContext.colorScheme.primary,
           child: TabBar(
-            controller: _tabController,
+            controller: tabController,
             indicatorColor: uiContext.colorScheme.onPrimary,
             labelColor: uiContext.colorScheme.onPrimary,
             unselectedLabelColor: uiContext.colorScheme.onPrimary.withValues(
@@ -49,7 +49,7 @@ class _HomeMobileTabsState extends State<_HomeMobileTabs>
         ),
         Expanded(
           child: TabBarView(
-            controller: _tabController,
+            controller: tabController,
             children: [
               _CurrentWeatherContent(
                 state: widget.state,

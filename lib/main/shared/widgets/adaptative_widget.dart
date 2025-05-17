@@ -26,7 +26,7 @@ class AdaptativeWidgetBuilder extends StatelessWidget {
         late final String label;
         late final Color color;
 
-        if (width < 600) {
+        if (width < 700) {
           child = mobile(context, constraints);
           label = 'MOBILE';
           color = Colors.blue;
