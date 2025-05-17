@@ -6,7 +6,7 @@ import 'package:weather_app/core/navigation/routes/app_directions.dart';
 import 'package:weather_app/main/modules/auth/navigation/auth_route.dart';
 import 'package:weather_app/main/modules/home/navigation/home_route.dart';
 import 'package:weather_app/main/modules/splash/navigation/splash_route.dart';
-import 'package:weather_app/main/shared/theme/material-theme/lib/theme.dart';
+import 'package:weather_app/main/shared/theme/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
