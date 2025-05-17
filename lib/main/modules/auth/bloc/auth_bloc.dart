@@ -4,7 +4,7 @@ import 'package:weather_app/core/domain/exceptions/auth/sign_in_exceptions.dart'
 import 'package:weather_app/core/domain/exceptions/auth/sign_up_exceptions.dart';
 import 'package:weather_app/core/domain/use_cases/auth/sign_in_use_case.dart';
 import 'package:weather_app/core/domain/use_cases/auth/sign_up_use_case.dart';
-import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/navigator/app_navigator.dart';
 import 'package:weather_app/core/navigation/routes/app_directions.dart';
 
 part 'auth_event.dart';

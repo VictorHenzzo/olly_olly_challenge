@@ -10,7 +10,7 @@ import 'package:weather_app/core/domain/use_cases/geolocation/fetch_position_use
 import 'package:weather_app/core/domain/use_cases/geolocation/open_app_settings_use_case.dart';
 import 'package:weather_app/core/domain/use_cases/weather/fetch_current_weather_use_case.dart';
 import 'package:weather_app/core/domain/use_cases/weather/fetch_forecast_report_use_case.dart';
-import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/navigator/app_navigator.dart';
 import 'package:weather_app/core/navigation/routes/app_directions.dart';
 
 part 'home_event.dart';

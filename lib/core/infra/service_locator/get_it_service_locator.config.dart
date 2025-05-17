@@ -42,7 +42,7 @@ import '../../domain/use_cases/weather/fetch_current_weather_use_case.dart'
     as _i127;
 import '../../domain/use_cases/weather/fetch_forecast_report_use_case.dart'
     as _i135;
-import '../../navigation/navigation/app_navigator.dart' as _i364;
+import '../../navigation/navigator/app_navigator.dart' as _i972;
 import '../env/environment.dart' as _i579;
 import '../logger/debug_logger.dart' as _i197;
 import '../logger/logger.dart' as _i512;
@@ -61,7 +61,7 @@ _i174.GetIt $initGetIt(
   final authDataSourceModule = _$AuthDataSourceModule();
   final httpServiceLocatorModule = _$HttpServiceLocatorModule();
   gh.factory<_i579.Environment>(() => const _i579.Environment());
-  gh.factory<_i364.AppNavigator>(() => const _i364.AppNavigator());
+  gh.factory<_i972.AppNavigator>(() => const _i972.AppNavigator());
   gh.lazySingleton<_i59.FirebaseAuth>(() => authDataSourceModule.firebaseAuth);
   gh.lazySingleton<_i519.Client>(() => httpServiceLocatorModule.httpClient);
   gh.factory<_i512.Logger>(() => _i197.DebugLogger());

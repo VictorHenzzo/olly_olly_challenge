@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/core/infra/firebase/firebase_initializer.dart';
 import 'package:weather_app/core/infra/service_locator/service_locator.dart';
-import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/navigator/app_navigator.dart';
 import 'package:weather_app/core/navigation/routes/app_directions.dart';
 import 'package:weather_app/main/modules/auth/navigation/auth_route.dart';
 import 'package:weather_app/main/modules/home/navigation/home_route.dart';

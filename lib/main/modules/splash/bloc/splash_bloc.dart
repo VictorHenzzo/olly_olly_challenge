@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:weather_app/core/domain/enums/auth/auth_status.dart';
 import 'package:weather_app/core/domain/use_cases/auth/fetch_auth_status_use_case.dart';
-import 'package:weather_app/core/navigation/navigation/app_navigator.dart';
+import 'package:weather_app/core/navigation/navigator/app_navigator.dart';
 import 'package:weather_app/core/navigation/routes/app_directions.dart';
 
 part 'splash_event.dart';
