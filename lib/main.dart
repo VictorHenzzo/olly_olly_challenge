@@ -5,24 +5,29 @@ import 'package:weather_app/core/navigation/routes/app_directions.dart';
 import 'package:weather_app/main/modules/auth/navigation/auth_route.dart';
 import 'package:weather_app/main/modules/home/navigation/home_route.dart';
 import 'package:weather_app/main/modules/splash/navigation/splash_route.dart';
+import 'package:weather_app/main/shared/theme/theme_generator.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await const FirebaseInitializer().initialize();
   await ServiceLocator().initialize();
-  runApp(const MyApp());
+  final theme = await const ThemeGenerator().generateTheme();
+  runApp(MyApp(theme: theme));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    required this.theme,
+    super.key,
+  });
+
+  final ThemeData theme;
 
   @override
   Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Weather App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: theme,
       initialRoute: AppDirections.splashScreen,
       routes: {
         AppDirections.splashScreen: const SplashRoute().build,
