@@ -1,8 +1,10 @@
-part of '../auth_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:weather_app/main/shared/ui_context.dart';
 
-class _FormBackgroundCard extends StatelessWidget {
-  const _FormBackgroundCard({
+class BackgroundDecorationCard extends StatelessWidget {
+  const BackgroundDecorationCard({
     required this.child,
+    super.key,
   });
 
   final Widget child;

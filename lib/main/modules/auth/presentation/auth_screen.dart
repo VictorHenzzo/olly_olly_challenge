@@ -7,12 +7,12 @@ import 'package:weather_app/core/domain/exceptions/auth/sign_up_exceptions.dart'
 import 'package:weather_app/main/modules/auth/bloc/auth_bloc.dart';
 import 'package:weather_app/main/shared/ui_context.dart';
 import 'package:weather_app/main/shared/widgets/adaptative_widget.dart';
+import 'package:weather_app/main/shared/widgets/form_background_card.dart';
 import 'package:weather_app/main/shared/widgets/form_fields/email_form_field.dart';
 import 'package:weather_app/main/shared/widgets/form_fields/password_form_field.dart';
 
 part 'widgets/auth_mode_switcher.dart';
 part 'widgets/credential_form.dart';
-part 'widgets/form_background_card.dart';
 part 'widgets/credential_form_error_feedback.dart';
 
 enum _CurrentMode {
@@ -61,7 +61,7 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
         desktop: (final context, final constraints) => _buildForm(
           math.max(constraints.maxWidth * 0.3, 500),
-          decoration: (final child) => _FormBackgroundCard(child: child),
+          decoration: (final child) => BackgroundDecorationCard(child: child),
         ),
       ),
     );
